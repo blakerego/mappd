@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
   def foursquare
     code = params[:code]
     state = params[:state]
-    binding.pry
     auth_url = URI.parse('https://foursquare.com/oauth2/access_token' +
       '?client_id=' + ENV['MAPPD_FSQ_CLIENT_ID'] +
       '&client_secret=' + ENV['MAPPD_FSQ_CLIENT_SECRET'] +
