@@ -5,7 +5,12 @@
   %ul
     - current_user.authentications.each do |auth|
       .li
-        %span.provider= auth.provider 
-        %span.uid= auth.uid
+        - if (auth.provider == 'foursquare')
+          FOURSQURE IMAGE HERE
+        - if (auth.provider == 'google_oauth2')
+          = image_tag('google_64.png')
+
+  %h2 Link Other Accounts
+  = link_to image_tag('google_64.png'), '/auth/google_oauth2'
 - else
   You are not logged in

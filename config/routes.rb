@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/auth', to: 'sessions#create'
   get '/auth/foursquare/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create'
 
 
   # Example of regular route:
