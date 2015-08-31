@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   get '/auth', to: 'sessions#create'
-  get '/auth/foursquare/callback', to: 'sessions#foursquare'
+  get '/auth/foursquare/callback', to: 'sessions#create'
 
 
   # Example of regular route:

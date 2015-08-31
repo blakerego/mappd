@@ -1,0 +1,11 @@
+%h1 Welcome to Mappd!
+
+- if user_signed_in?
+  %h2 Linked Accounts
+  %ul
+    - current_user.authentications.each do |auth|
+      .li
+        %span.provider= auth.provider 
+        %span.uid= auth.uid
+- else
+  You are not logged in

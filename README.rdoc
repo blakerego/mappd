@@ -1,11 +1,6 @@
 == README
 
-
-* Ruby version
-
 * Devise for authentication
 
 * Omniauth for Oauth to Google, Foursquare
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
