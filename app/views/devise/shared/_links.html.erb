@@ -11,6 +11,8 @@
 <% end -%>
 
 <%= link_to "Log in with Foursquare", "/auth/foursquare" %>
+</br>
+<%= link_to "Log in with Google", "/auth/google_oauth2" %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />

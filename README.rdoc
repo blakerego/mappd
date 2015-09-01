@@ -1,4 +1,4 @@
-== README
+== MAPPD
 
 * Devise for authentication
 
