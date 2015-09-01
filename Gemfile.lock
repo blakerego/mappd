@@ -95,10 +95,13 @@ GEM
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.0.0)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.8.0)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -220,6 +223,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   meta_request
+  mocha
   omniauth
   omniauth-foursquare
   omniauth-google-oauth2
