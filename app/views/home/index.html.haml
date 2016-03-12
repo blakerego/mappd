@@ -11,7 +11,18 @@
         .li
           = image_tag('google_64.png')
 
-  / %h2 Link Other Accounts
-  / = link_to image_tag('google_64.png'), '/auth/google_oauth2'
+
+  - if !@checkins.nil? && @checkins.length > 0
+    %h2 Your Data
+    %ul
+      - @checkins.each do |checkIn|
+        %li
+          = checkIn.venue.name
+          %br
+          = checkIn.venue.location.lat
+          ,
+          = checkIn.venue.location.lng
+  - else 
+    No check-in data available
 - else
   You are not logged in

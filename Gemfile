@@ -30,6 +30,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-foursquare'
 gem 'devise'
+gem 'foursquare2'
 
 gem 'better_errors'
 gem 'binding_of_caller'
