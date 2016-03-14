@@ -12,16 +12,16 @@
           = image_tag('google_64.png')
 
 
-  - if !@checkins.nil? && @checkins.length > 0
+  - if !@locations.nil? && @locations.length > 0
     %h2 Your Data
     %ul
-      - @checkins.each do |checkIn|
+      - @locations.each do |location|
         %li
-          = checkIn.venue.name
+          = location.name
           %br
-          = checkIn.venue.location.lat
+          = location.latitude
           ,
-          = checkIn.venue.location.lng
+          = location.longitude
   - else 
     No check-in data available
 - else
