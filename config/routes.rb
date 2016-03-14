@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :maps
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/auth', to: 'sessions#create'
   get '/auth/:provider/callback', to: 'sessions#create'
+
+  get '/users/:id', to: 'users#show'
 
 
   # Example of regular route:
