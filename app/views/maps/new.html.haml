@@ -1,6 +1,8 @@
-%h1
-  New Map
 
-= render 'form'
+.new{"ng-controller" => "mapsController"}
+  %h1
+    New Map
 
-= link_to 'Back', maps_path
+  = render 'form'
+
+  = link_to 'Back', maps_path

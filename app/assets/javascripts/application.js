@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+/* global angular */
+angular.module('mappd', ['mapsController']);
