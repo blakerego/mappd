@@ -28,6 +28,7 @@ class MapsController < ApplicationController
   # POST /maps
   # POST /maps.json
   def create
+    # This takes a map object, which includes an array of location_ids.
     @map = Map.new(map_params)
     respond_to do |format|
       if @map.save
@@ -72,7 +73,7 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:user_id, location_ids: [])
+      params.require(:map).permit(:user_id, :name, location_ids: [])
     end
 
 end

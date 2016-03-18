@@ -1,6 +1,6 @@
 angular.module('mapsController', ['locationService', 'userService'])
-.controller('mapsController', ['$scope', '$http', 'locationService', 'userService',
-  function ($scope, $http, locationService, userService) {
+.controller('mapsController', ['$scope', '$http', 'locationService', 'userService', '$window',
+  function ($scope, $http, locationService, userService, $window) {
 
   $scope.desiredLocations = [];
 
@@ -40,7 +40,7 @@ angular.module('mapsController', ['locationService', 'userService'])
   function createMap() {
     $scope.map.location_ids = _.map($scope.desiredLocations, function (l) { return l.id; });
     $http.post('/maps.json', {'map': $scope.map}).then(function(response) {
-      console.log(response.data);
+      $window.location.href = '/maps/' + response.data.id;
     });
   }
 }]);

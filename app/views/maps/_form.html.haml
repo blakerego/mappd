@@ -1,4 +1,5 @@
-= form_for(@map) do |f|
+.editMap{"ng-controller" => "mapsController"}
+  %input{"ng-model" => "map.name", "type" => "text"}
 
   %ul
     %li{"ng-repeat" => "location in locations"}
@@ -7,15 +8,5 @@
         {{location.latitude}}
         {{location.longitude}}
 
-  - if @map.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@map.errors.count, "error") 
-        prohibited this map from being saved:
-
-      %ul
-        - @map.errors.full_messages.each do |message|
-          %li= message
-
-  .actions
-    = f.submit
+  %button{"ng-click" => "submit()"}
+    SUBMIT ASYNC
