@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   get '/auth', to: 'sessions#create'
   get '/auth/:provider/callback', to: 'sessions#create'
 
+
+  get '/users/current', to: 'users#currentUser'
+
   get '/users/:id', to: 'users#show'
+
+  get '/locations/all', to: 'locations#getAllLocations'
 
 
   # Example of regular route:

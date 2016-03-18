@@ -1,18 +1,11 @@
 = form_for(@map) do |f|
 
-  %p
-    Name : 
-
   %ul
-    - @locations.each do |location|
-      %li
-        %input{:type => 'checkbox'}
-        = location.name
-        %br
-        = location.latitude
-        ,
-        = location.longitude
-
+    %li{"ng-repeat" => "location in locations"}
+      %input{:type => 'checkbox', "ng-click" => "locationChecked(null, $event, location)"}
+        {{location.name}}
+        {{location.latitude}}
+        {{location.longitude}}
 
   - if @map.errors.any?
     #error_explanation
