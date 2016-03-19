@@ -1,7 +1,21 @@
-%p#notice
-  = notice
+.show{"ng-controller" => "mapsController"}
+  %p#notice
+    = notice
 
-= @map.name
+  %p
+    = @map.name
 
-= link_to 'Edit', edit_map_path(@map) |
-= link_to 'Back', maps_path
+  %p
+    = @browserKey
+
+  #map
+    test
+
+  / %script{"src" => "https://maps.googleapis.com/maps/api/js?key=#{@browserKey}&callback=initMap", "async defer" => ""}
+
+  / %ui-gmap-google-map{"center" => "map.center", "ng-zoom" => "map.zoom"}
+  
+  %ui-gmap-google-map{"center" => "{latitude: -34.397, longitude: 150.644}", "zoom" => "8"}
+
+  = link_to 'Edit', edit_map_path(@map) |
+  = link_to 'Back', maps_path

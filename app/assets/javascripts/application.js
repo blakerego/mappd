@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require underscore
 //= require angular
+//= require angular-simple-logger
+//= require angular-google-maps
 //= require_tree .
 
 /* global angular */

@@ -1,6 +1,6 @@
-angular.module('mapsController', ['locationService', 'userService'])
-.controller('mapsController', ['$scope', '$http', 'locationService', 'userService', '$window',
-  function ($scope, $http, locationService, userService, $window) {
+angular.module('mapsController', ['locationService', 'userService', 'uiGmapgoogle-maps'])
+.controller('mapsController', ['$scope', '$http', 'locationService', 'userService', '$window', 'uiGmapGoogleMapApi',
+  function ($scope, $http, locationService, userService, $window, uiGmapGoogleMapApi) {
 
   $scope.desiredLocations = [];
 
@@ -17,6 +17,8 @@ angular.module('mapsController', ['locationService', 'userService'])
   $scope.map = {
     'user_id': null
   };
+
+  $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
   $scope.locationChecked = function (blank, $event, location) {
     var checkbox = $event.target;
@@ -44,3 +46,11 @@ angular.module('mapsController', ['locationService', 'userService'])
     });
   }
 }]);
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+      });
+}
