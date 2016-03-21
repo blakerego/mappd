@@ -20,4 +20,4 @@
 //= require_tree .
 
 /* global angular */
-angular.module('mappd', ['mapsController']);
+angular.module('mappd', ['mapsController', 'showMapsController']);

@@ -1,4 +1,4 @@
-.show{"ng-controller" => "mapsController"}
+.show{"ng-controller" => "showMapsController"}
   %p#notice
     = notice
 
@@ -15,7 +15,7 @@
 
   / %ui-gmap-google-map{"center" => "map.center", "ng-zoom" => "map.zoom"}
   
-  %ui-gmap-google-map{"center" => "{latitude: -34.397, longitude: 150.644}", "zoom" => "8"}
+  %ui-gmap-google-map{"center" => "{latitude: -34.397, longitude: 150.644}", "bounds" => "getBoundsFromLocation(locations)", "refresh" => "ready", "zoom" => "8"}
 
   = link_to 'Edit', edit_map_path(@map) |
   = link_to 'Back', maps_path

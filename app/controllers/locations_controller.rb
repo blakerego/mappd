@@ -4,4 +4,8 @@ class LocationsController < ApplicationController
     locations = Location.all
     render json: locations
   end
+
+  def getLocationsByMap()
+    render json: Map.find(params[:map_id]).locations
+  end
 end

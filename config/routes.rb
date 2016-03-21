@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get '/locations/all', to: 'locations#getAllLocations'
 
+  get '/locations/bymapid', to: 'locations#getLocationsByMap'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
