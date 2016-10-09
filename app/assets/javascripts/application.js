@@ -19,4 +19,11 @@
 //= require_tree .
 
 /* global angular */
-angular.module('mappd', ['mapsController', 'showMapsController']);
+angular.module('mappd', ['mapsController', 'showMapsController'])
+
+.config(function (uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    key: $('#gmap-key').attr('data'),
+    // libraries: 'weather,geometry,visualization'
+  });
+});
