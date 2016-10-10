@@ -20,7 +20,8 @@ angular.module('showMapsController', ['locationService', 'uiGmapgoogle-maps'])
         coords: {
           latitude: location.latitude,
           longitude: location.longitude
-        }
+        },
+        options: { draggable: true }
       };
     });
     $scope.ready = true;
@@ -29,16 +30,32 @@ angular.module('showMapsController', ['locationService', 'uiGmapgoogle-maps'])
   $scope.loaded = false;
   $scope.bounds = null;
   $scope.getBoundsFromLocation = function (locations) {
-    if (!$scope.loaded && locations != null) {
+    if ($scope.ready && !$scope.loaded && locations != null) {
       $scope.bounds = locationService.getBoundsFromLocation(locations);
-      // $scope.loaded = true;
+      $scope.loaded = true;
     }
     return $scope.bounds;
   };
 
   $scope.map = {
     center: { latitude: 45, longitude: -73 },
-    zoom: 8 
+    zoom: 8,
+    // events: {
+    //   click: function () {
+    //     console.log('CLICK');
+    //   },
+    //   dragend: function () {
+    //     console.log('Dragging over');
+    //   }
+    // }
   };
+
+  uiGmapGoogleMapApi.then(function (maps) {
+    console.log("Maps API ready");
+    // maps.event.addListener('dragend', function () {
+    //   console.log('Dragging'); 
+    // });
+
+  });
 
 }]);
