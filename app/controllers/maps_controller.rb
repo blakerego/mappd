@@ -1,6 +1,5 @@
 class MapsController < ApplicationController
   before_action :set_map, only: [:show, :edit, :update, :destroy]
-  before_action :set_api_key
 
   # GET /maps
   # GET /maps.json
@@ -76,9 +75,4 @@ class MapsController < ApplicationController
     def map_params
       params.require(:map).permit(:user_id, :name, location_ids: [])
     end
-
-    def set_api_key
-      @browserKey = ENV['MAPPD_GOOG_BROWSER_API_KEY']
-    end
-
 end
