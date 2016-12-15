@@ -16,14 +16,24 @@
 //= require angular
 //= require angular-simple-logger
 //= require angular-google-maps
+//= require angular-route/angular-route
 //= require_tree .
 
 /* global angular */
-angular.module('mappd', ['mapsController', 'showMapsController'])
+angular.module('mappd', ['ngRoute','mapsController', 'showMapsController'])
 
 .config(function (uiGmapGoogleMapApiProvider) {
   uiGmapGoogleMapApiProvider.configure({
-    key: $('#gmap-key').attr('data'),
-    // libraries: 'weather,geometry,visualization'
+    key: $('#gmap-key').attr('data')
   });
-});
+})
+.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.when('/', {
+        templateUrl: '../views/templates/home.html',
+        // controller: 'loginCtrl',
+        // reloadOnSearch: false
+      })
+    }
+  ]
+);

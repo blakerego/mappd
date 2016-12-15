@@ -1,16 +1,12 @@
 %h1 Welcome to Mappd!
 
 - if user_signed_in?
-  %h2 Linked Accounts
-  %ul
-    - current_user.authentications.each do |auth|
-      - if (auth.provider == 'foursquare')
-        .li
-          FOURSQURE IMAGE HERE
-      - if (auth.provider == 'google_oauth2')
-        .li
-          = image_tag('google_64.png')
 
+  - if (current_user.maps.length > 0)
+    %h2 Your Saved Maps
+    = render :partial => 'maps/maps', :locals => {:maps => @current_user.maps}
+    %br
+    = link_to 'New Map', new_map_path
 
   - if !@locations.nil? && @locations.length > 0
     %h2 Your Data
@@ -24,5 +20,17 @@
           = location.longitude
   - else 
     No check-in data available
+
+  %h2 Linked Accounts
+  %ul
+    - current_user.authentications.each do |auth|
+      - if (auth.provider == 'foursquare')
+        .li
+          FOURSQURE IMAGE HERE
+      - if (auth.provider == 'google_oauth2')
+        .li
+          = image_tag('google_64.png')
+
 - else
   You are not logged in
+
