@@ -18,5 +18,4 @@ Rails.application.routes.draw do
 
   get '/locations/bymapid', to: 'locations#getLocationsByMap'
 
-
 end

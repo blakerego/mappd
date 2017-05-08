@@ -13,7 +13,7 @@
     "angular-route": "~1.5.8"
   },
   "resolutions": {
-    "angular": "1.5.8",
+    "angular": ">=1.0.0 <1.4.0",
     "lodash": "3.X - 4.X"
   },
   "devDependencies": {
